@@ -1,0 +1,25 @@
+<div class="container__popup--delete">
+  <h1 mat-dialog-title>Confirm Action</h1>
+  <div mat-dialog-content>
+    Are you sure delete Employee with username:
+    <p style="color: red">{{ data.userName }}</p>
+    Name :
+    <p style="color: red">{{ data.name }}</p>
+    Email:
+    <p style="color: red">{{ data.email }}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      (click)="onSubmitDelete(data.id)"
+      mat-button
+      mat-dialog-close
+      mat-flat-button
+      color="warn"
+    >
+      Delete
+    </button>
+    <button mat-button mat-flat-button mat-dialog-close color="primary">
+      Close
+    </button>
+  </div>
+</div>

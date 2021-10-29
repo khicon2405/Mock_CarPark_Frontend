@@ -1,0 +1,46 @@
+<div class="container__wrapper">
+  <div class="container__login">
+    <h2 class="heading__login">Welcome Back</h2>
+    <form
+      [formGroup]="loginForm"
+      class="loginForm"
+      (ngSubmit)="onSubmit(Dialog_err)"
+    >
+      <div class="form__control">
+        <mat-form-field>
+          <mat-label>User name</mat-label>
+          <input type="text" matInput formControlName="userName" />
+          <mat-error>This filed is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="passWord" />
+        </mat-form-field>
+      </div>
+      <div class="form__control btn">
+        <button
+          class="btn__login"
+          type="submit"
+          mat-raised-button
+          color="primary"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <ng-template #Dialog_err>
+    <div class="dialog__wraper">
+      <h1 mat-dialog-title>Something wrong !!!</h1>
+      <div mat-dialog-content>
+        User name or password is wrong. Please check again
+      </div>
+      <div mat-dialog-actions>
+        <button mat-button mat-dialog-close>Ok</button>
+      </div>
+    </div>
+  </ng-template>
+</div>

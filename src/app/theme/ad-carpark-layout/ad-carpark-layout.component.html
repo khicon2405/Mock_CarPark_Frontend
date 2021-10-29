@@ -1,0 +1,56 @@
+<mat-toolbar>
+  <div class="nav__container">
+    <div class="nav__container--left">
+      <button (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="header__heading">Car Park Manager</span>
+    </div>
+    <div class="nav__container--right">
+      <div class="user__menu">
+        <img src="../../../assets/avata_user.jpg" alt="" class="user__avata" />
+        <div class="user__name">Hoang Tran</div>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>exit_to_app </mat-icon>
+            Logout
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #drawer mode="side" opened="true">
+    <mat-nav-list>
+      <div *ngFor="let item of listItem; index as i" class="group__item">
+        <a mat-list-item (click)="onSelectedItem(i)">
+          <mat-icon>{{ item.icon }}</mat-icon>
+          {{ item.name }}
+          <mat-icon class="icon__dropdown">
+            keyboard_arrow_down
+          </mat-icon>
+        </a>
+        <div *ngIf="!item.hidden" class="sub__item">
+          <a
+            *ngFor="let itemChild of item.childItem; index as i_child"
+            mat-list-item
+            routerLink="{{ itemChild.routerLink }}"
+            routerLinkActive="link--active"
+          >
+            <mat-icon>{{ itemChild.icon }}</mat-icon>
+            {{ itemChild.childName }}
+          </a>
+        </div>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet> </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

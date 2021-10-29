@@ -1,0 +1,29 @@
+.heading {
+   font-size: 40px;
+   font-weight: 550;
+   text-align: center;
+   margin: 10px 0;
+   height: 50px;
+ }
+ .main {
+   width: 100%;
+   height: 70vh;
+ }
+ .form_newEmp {
+   width: 50%;
+   height: 60%;
+   margin: 20px auto;
+ }
+ .form__control {
+   width: 80%;
+   height: 100px;
+   margin: 10px auto;
+ }
+ .double {
+   display: flex;
+   justify-content: space-between;
+ }
+ .longInput {
+   width: 100% !important;
+ }
+ 

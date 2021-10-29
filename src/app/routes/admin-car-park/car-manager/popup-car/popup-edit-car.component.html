@@ -1,0 +1,94 @@
+<div class="container__popup--edit">
+  <h2 class="heading__popup">Edit car</h2>
+  <form class="formEdit" #formEdit="ngForm" (ngSubmit)="onSubmitEdit(formEdit)">
+    <div class="form__control">
+      <mat-form-field appearance="fill">
+        <mat-label>License Plate</mat-label>
+        <input
+          type="text"
+          matInput
+          [ngModel]="data.licensePlate"
+          name="licensePlate"
+          #licensePlate
+          required
+        />
+        <mat-error *ngIf="formEdit.controls.licensePlate?.errors?.required">
+          Please enter a valid data
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form__control">
+      <mat-form-field appearance="fill">
+        <mat-label>Car type</mat-label>
+        <input
+          type="text"
+          matInput
+          [ngModel]="data.carType"
+          name="carType"
+          #carType
+          required
+        />
+        <mat-error *ngIf="formEdit.controls.carType?.errors?.required">
+          Please enter a valid data
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form__control">
+      <mat-form-field appearance="fill">
+        <mat-label>Car color</mat-label>
+        <input
+          type="text"
+          matInput
+          [ngModel]="data.carColor"
+          name="carColor"
+          required
+        />
+        <mat-error *ngIf="formEdit.controls.carColor?.errors?.required">
+          Please enter a valid data
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form__control">
+      <mat-form-field appearance="fill">
+        <mat-label>Company</mat-label>
+        <input
+          type="text"
+          matInput
+          [ngModel]="data.company"
+          name="company"
+          required
+        />
+        <mat-error *ngIf="formEdit.controls.company?.errors?.required">
+          Please enter a valid data
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form__control">
+      <mat-form-field appearance="fill">
+        <mat-label>Parking Lot</mat-label>
+        <input
+          type="text"
+          matInput
+          [ngModel]="data.parkId"
+          name="parkId"
+          required
+        />
+        <mat-error *ngIf="formEdit.controls.parkId?.errors?.required">
+          Please enter a valid data
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form__control btn__control">
+      <button type="submit" class="btn" mat-raised-button color="primary">
+        Confirm</button
+      ><button
+        class="btn"
+        mat-raised-button
+        mat-dialog-close
+        style="background-color: rgb(29, 179, 74); color: white"
+      >
+        Close
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,133 @@
+<div class="container__newEmployee">
+  <div class="heading">Add new employee</div>
+
+  <div class="main">
+    <form
+      class="form_newEmp"
+      [formGroup]="form_newEmp"
+      (ngSubmit)="onSubmitAdd()"
+    >
+      <div class="form__control">
+        <mat-form-field appearance="fill" class="longInput">
+          <mat-label>User Name</mat-label>
+          <input
+            formControlName="userName"
+            matInput
+            placeholder="Ex. myaccount"
+          />
+          <mat-error
+            *ngIf="
+              form_newEmp.controls.userName?.hasError('required') &&
+              form_newEmp.controls.userName?.touched
+            "
+            >User Name is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field appearance="fill" class="longInput">
+          <mat-label> Pass Word</mat-label>
+          <input
+            formControlName="passWord"
+            matInput
+            placeholder="Ex. mypassword"
+          />
+          <mat-error
+            *ngIf="
+              form_newEmp.controls.passWord?.hasError('required') &&
+              form_newEmp.controls.passWord?.touched
+            "
+            >Pass Word is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field appearance="fill" class="longInput">
+          <mat-label>Full Name</mat-label>
+          <input
+            formControlName="name"
+            matInput
+            placeholder="Ex. Trần Việt Hoàng"
+          />
+          <mat-error
+            *ngIf="
+              form_newEmp.controls.fullName?.hasError('required') &&
+              form_newEmp.controls.fullName?.touched
+            "
+            >Full Name is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field appearance="fill" class="longInput">
+          <mat-label>Address</mat-label>
+          <input formControlName="address" matInput placeholder="Ex. Ha Noi" />
+          <mat-error
+            *ngIf="
+              form_newEmp.controls.address?.hasError('required') &&
+              form_newEmp.controls.address?.touched
+            "
+            >Full Name is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field appearance="fill" class="longInput">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Ex: viethoang@gmail.com"
+            formControlName="email"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="form__control double">
+        <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input
+            formControlName="phone"
+            matInput
+            #input
+            maxlength="10"
+            placeholder="Ex: 0123456789"
+          />
+          <mat-hint align="end">{{ input.value?.length || 0 }}/10</mat-hint>
+          <mat-error
+            *ngIf="
+              form_newEmp.controls.phone?.hasError('required') &&
+              form_newEmp.controls.phone?.touched
+            "
+            >Phone is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="sex">
+            <mat-option value="1">Male</mat-option>
+            <mat-option value="0">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Department</mat-label>
+          <mat-select formControlName="department">
+            <mat-option value="employee">Employee</mat-option>
+            <mat-option value="admin">Admin</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form__control">
+        <button
+          class="btn__submit"
+          mat-raised-button
+          type="submit"
+          color="primary"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="footer"></div>
+</div>

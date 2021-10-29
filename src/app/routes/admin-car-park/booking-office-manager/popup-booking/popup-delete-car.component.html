@@ -1,0 +1,19 @@
+<div class="container__popup--delete">
+  <h1 mat-dialog-title>Confirm Action</h1>
+  <div mat-dialog-content>
+    Are you sure delete the car with license plate:
+    <p style="color: red">{{ data.element.licensePlate }}</p>
+    type :
+    <p style="color: red">{{ data.element.carType }}</p>
+    color:
+    <p style="color: red">{{ data.element.carColor }}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-flat-button color="warn">Delete</button>
+    <button mat-button mat-flat-button mat-dialog-close color="primary">
+      Close
+    </button>
+  </div>
+</div>
+
+<style></style>

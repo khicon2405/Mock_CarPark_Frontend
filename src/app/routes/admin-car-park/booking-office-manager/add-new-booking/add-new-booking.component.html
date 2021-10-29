@@ -1,0 +1,79 @@
+<div class="container__newEmployee">
+  <div class="heading">Add new booking</div>
+
+  <div class="main">
+    <form
+      class="form_newEmp"
+      [formGroup]="form_newBook"
+      (ngSubmit)="onSubmitAdd()"
+    >
+      <div class="form__control">
+        <mat-form-field appearance="fill" class="longInput">
+          <mat-label>Full Name</mat-label>
+          <input
+            formControlName="fullName"
+            matInput
+            placeholder="Ex. Trần Việt Hoàng"
+          />
+          <mat-error
+            *ngIf="
+              form_newBook.controls.fullName?.hasError('required') &&
+              form_newBook.controls.fullName?.touched
+            "
+            >Full Name is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field appearance="fill" class="longInput">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Ex: viethoang@gmail.com"
+            formControlName="email"
+            required
+          />
+          <mat-error
+            *ngIf="
+            form_newBook.controls.email?.hasError('required') &&
+            form_newBook.controls.email?.touched
+            "
+            >Email is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form__control double">
+        <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input
+            formControlName="phone"
+            matInput
+            #input
+            maxlength="10"
+            placeholder="Ex: 0123456789"
+          />
+          <mat-hint align="end">{{ input.value?.length || 0 }}/10</mat-hint>
+          <mat-error
+            *ngIf="
+            form_newBook.controls.phone?.hasError('required') &&
+            form_newBook.controls.phone?.touched
+            "
+            >Phone is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender">
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form__control"></div>
+      <div class="form__control">
+        <button mat-raised-button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="footer"></div>
+</div>

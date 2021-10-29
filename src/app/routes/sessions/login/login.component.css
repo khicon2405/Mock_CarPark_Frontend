@@ -1,0 +1,63 @@
+.container__wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  background-image: linear-gradient(
+      rgba(73, 127, 230, 0.3),
+      rgba(114, 241, 135, 0.1)
+    ),
+    url("../../../../assets/BG_login.jpg");
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+}
+
+.container__login {
+  width: 60vw;
+  height: 60vh;
+  margin: 0 auto;
+  font-size: 20px !important;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  z-index: 1000;
+  position: absolute;
+  top: 20vh;
+  left: 20vw;
+}
+.heading__login {
+  text-align: center;
+  color: rgb(47, 0, 255);
+}
+.loginForm {
+}
+.form__control {
+  width: 50% !important;
+  min-height: 100px;
+  margin: 10px auto;
+}
+
+.mat-form-field {
+  width: 100% !important;
+}
+
+.btn {
+  text-align: center !important;
+}
+.btn__login {
+  width: 100px !important;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 550;
+}
+
+/* ------------Dialog---------- */
+.mat-button {
+  background-color: rgb(55, 8, 131);
+  color: white;
+  opacity: 0.8;
+}
+.btn__close :hover {
+  opacity: 1;
+  background-color: red !important;
+}
