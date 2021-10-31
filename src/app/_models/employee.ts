@@ -1,9 +1,9 @@
 export interface Employee {
    Id : number,
-   Name: string,
-   Email: string,
-   Address: string,
-   Sex: string,
+   name: string,
+   email: string,
+   address: string,
+   sex: string,
    userName: string,
-   Phone: string
+   phone: string
 }

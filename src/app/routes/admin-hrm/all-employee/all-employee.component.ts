@@ -33,10 +33,11 @@ export class AllEmployeeComponent implements OnInit {
   
 
   getAllEmployeeApi() {
-    this.employeeService.getAllEmployeeApi().subscribe((res: any) => {
-      console.log(res);
-      this.dataSourse = new MatTableDataSource(res);
-    });
+    // this.employeeService.getAllEmployeeApi().subscribe((res: any) => {
+    //   console.log(res);
+    //   this.dataSourse = new MatTableDataSource(res);
+    // });
+    this.dataSourse = new MatTableDataSource(this.employeeService.getAllEmployeeApi())
   }
 
   openPopupEdit(e: Employee) {

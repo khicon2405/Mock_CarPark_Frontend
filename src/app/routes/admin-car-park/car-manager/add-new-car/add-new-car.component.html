@@ -1,80 +1,77 @@
 <div class="container__newEmployee">
-   <div class="heading">Add new car</div>
-   
-   <div class="main">
-     <form
-       class="form_newEmp"
-       [formGroup]="form_newEmp"
-       (ngSubmit)="onSubmitAdd()"
-     >
-       <div class="form__control">
-         <mat-form-field appearance="fill" class="longInput">
-           <mat-label>Full Name</mat-label>
-           <input
-             formControlName="fullName"
-             matInput
-             placeholder="Ex. Trần Việt Hoàng"
-           />
-           <mat-error
-             *ngIf="
-               form_newEmp.controls.fullName?.hasError('required') &&
-               form_newEmp.controls.fullName?.touched
-             "
-             >Full Name is required</mat-error
-           >
-         </mat-form-field>
-       </div>
-       <div class="form__control">
-         <mat-form-field appearance="fill" class="longInput">
-           <mat-label>Email</mat-label>
-           <input
-             matInput
-             placeholder="Ex: viethoang@gmail.com"
-             formControlName="email"
-             required
-           />
-           <mat-error
-             *ngIf="
-               form_newEmp.controls.email?.hasError('required') &&
-               form_newEmp.controls.email?.touched
-             "
-             >Email is required</mat-error
-           >
-         </mat-form-field>
-       </div>
-       <div class="form__control double">
-         <mat-form-field hintLabel="Max 10 characters" appearance="fill">
-           <mat-label>Phone Number</mat-label>
-           <input
-             formControlName="phone"
-             matInput
-             #input
-             maxlength="10"
-             placeholder="Ex: 0123456789"
-           />
-           <mat-hint align="end">{{ input.value?.length || 0 }}/10</mat-hint>
-           <mat-error
-             *ngIf="
-               form_newEmp.controls.phone?.hasError('required') &&
-               form_newEmp.controls.phone?.touched
-             "
-             >Phone is required</mat-error
-           >
-         </mat-form-field>
-         <mat-form-field appearance="fill">
-           <mat-label>Gender</mat-label>
-           <mat-select formControlName="gender">
-             <mat-option value="male">Male</mat-option>
-             <mat-option value="female">Female</mat-option>
-           </mat-select>
-         </mat-form-field>
-       </div>
-       <div class="form__control"></div>
-       <div class="form__control">
-         <button mat-raised-button type="submit">Submit</button>
-       </div>
-     </form>
-   </div>
-   <div class="footer"></div>
- </div>
- 
+  <div class="heading">Add new car</div>
+
+  <div class="main">
+    <form
+      class="form_newEmp"
+      [formGroup]="form_newEmp"
+      (ngSubmit)="onSubmitAdd()"
+    >
+      <div class="form__control">
+        <mat-form-field appearance="fill" class="longInput">
+          <mat-label>License Plate</mat-label>
+          <input
+            formControlName="licensePlate"
+            matInput
+            placeholder="Ex. 30A1234"
+          />
+          <mat-error
+            *ngIf="
+              form_newEmp.controls.licensePlate?.hasError('required') &&
+              form_newEmp.controls.licensePlate?.touched
+            "
+            >License Plate is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field appearance="fill" class="longInput">
+          <mat-label>Car Type</mat-label>
+          <input
+            matInput
+            placeholder="Ex: Honda"
+            formControlName="carType"
+            required
+          />
+          <mat-error
+            *ngIf="
+              form_newEmp.controls.carType?.hasError('required') &&
+              form_newEmp.controls.carType?.touched
+            "
+            >Car Type is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form__control double">
+        <mat-form-field appearance="fill">
+          <mat-label>Car Color </mat-label>
+          <input
+            formControlName="carColor"
+            matInput
+            #carColor
+            placeholder="Ex: 0123456789"
+          />
+          <mat-error
+            *ngIf="
+              form_newEmp.controls.carColor?.hasError('required') &&
+              form_newEmp.controls.carColor?.touched
+            "
+            >Car Color is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Parking Lot</mat-label>
+          <mat-select formControlName="parkingLot">
+            <mat-option value="Park 1">Park 1</mat-option>
+            <mat-option value="Park 2">Park 2</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form__control"></div>
+      <div class="form__control">
+        <button mat-raised-button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="footer"></div>
+</div>

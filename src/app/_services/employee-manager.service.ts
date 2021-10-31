@@ -12,48 +12,30 @@ import { HttpClient } from '@angular/common/http';
 export class EmployeeManagerService {
   constructor(private baseService: BaseService, private http: HttpClient) {}
 
-  public getAllEmployeeApi(): Observable<Employee> {
-    // return [
-    //   {
-    //     Id: 1,
-    //     Name: 'Tran Viet Hoang',
-    //     Email: 'hoangtran@gmail.com',
-    //     Phone: '0123456789',
-    //     Sex: '1',
-    //     userName: 'hoangtran',
-    //     Address: 'Ha Noi',
-    //   },
-    //   {
-    //     Id: 2,
-    //     Name: 'Tran Viet Hoang',
-    //     Email: 'hoangtran@gmail.com',
-    //     Phone: '0123456789',
-    //     Sex: '1',
-    //     userName: 'hoangtran',
-    //     Address: 'Ha Noi',
-    //   },
-    //   {
-    //     Id: 3,
-    //     Name: 'Tran Viet Hoang',
-    //     Email: 'hoangtran@gmail.com',
-    //     Phone: '0123456789',
-    //     Sex: '1',
-    //     userName: 'hoangtran',
-    //     Address: 'Ha Noi',
-    //   },
-    //   {
-    //     Id: 4,
-    //     Name: 'Tran Viet Hoang',
-    //     Email: 'hoangtran@gmail.com',
-    //     Phone: '0123456789',
-    //     Sex: '1',
-    //     userName: 'hoangtran',
-    //     Address: 'Ha Noi',
-    //   },
-    // ];
-    return this.baseService.get<any>(
-      `${AppConstant.API_url}/Employee/get-all-employee`
-    );
+  public getAllEmployeeApi(): Employee[] {
+    return [
+      {
+        Id: 1,
+        name: 'Tran Viet Hoang',
+        email: 'hoangtran@gmail.com',
+        phone: '0123456789',
+        sex: '1',
+        userName: 'hoangtran',
+        address: 'Ha Noi',
+      },
+      {
+        Id: 2,
+        name: 'Nguyen Viet Hoang',
+        email: 'hoangtran@gmail.com',
+        phone: '0123456789',
+        sex: '1',
+        userName: 'hoangnguyen',
+        address: 'Ha Noi',
+      },
+    ];
+    // return this.baseService.get<any>(
+    //   `${AppConstant.API_url}/Employee/get-all-employee`
+    // );
   }
 
   public createNewEmployee(data: any): Observable<any> {
@@ -63,8 +45,11 @@ export class EmployeeManagerService {
     );
   }
 
-  public editEmployee(id:any, data:any):Observable<any> {
-    return this.baseService.put<any>(`${AppConstant.API_url}/Employee/edit-employee-by-id?Id=${id}`,data)
+  public editEmployee(id: any, data: any): Observable<any> {
+    return this.baseService.put<any>(
+      `${AppConstant.API_url}/Employee/edit-employee-by-id?Id=${id}`,
+      data
+    );
   }
 
   public deleteEmployee(data: any): Observable<any> {

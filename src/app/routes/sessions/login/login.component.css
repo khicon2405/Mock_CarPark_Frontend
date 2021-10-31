@@ -12,6 +12,23 @@
 
   position: relative;
 }
+.go-main {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+.btn-gomain {
+  width: 100px;
+  height: 50px !;
+  background-color: rgba(81, 243, 17, 0.3);
+  margin: 10px 0;
+  cursor: pointer;
+  color: white;
+}
+.btn-gomain:hover {
+  background-color: rgba(75, 195, 28, 0.883);
+  border: 1px solid white;
+}
 
 .container__login {
   width: 60vw;

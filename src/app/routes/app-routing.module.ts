@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from '../shared/component/error-page/error-page.component';
 import { AdCarparkLayoutComponent } from '../theme/ad-carpark-layout/ad-carpark-layout.component';
 import { AdHrmLayoutComponent } from '../theme/ad-hrm-layout/ad-hrm-layout.component';
+import { AuthGuard } from '../_core/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
       import('./sessions/sessions.module').then((m) => m.SessionsModule),
   },
   {
+    //  canActivate: [AuthGuard],
     path: 'admin-hrm',
     component: AdHrmLayoutComponent,
     children: [
@@ -23,6 +25,7 @@ const routes: Routes = [
     ],
   },
   {
+    // canActivate: [AuthGuard],
     path: 'admin-car-park',
     component: AdCarparkLayoutComponent,
     children: [
